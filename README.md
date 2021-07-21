@@ -9,6 +9,8 @@ While its primary goal is to offer a convenient GUI for the *SUBST* command, I u
 
 At this point I am satisfied with SUBSTitute: There are no major features/changes planned. I still keep an eye on .NET Core updates, though. And I might expand on the easter egg (about dialog) just for fun.
 ## Version history
+### 1.1.4 (2021-07-21)
+* Added reboot persistance
 ### 1.1.3 (2020-05-23)
 * Target framework updated to [.NET 5.0.0 Preview 4](https://github.com/dotnet/core/blob/master/release-notes/5.0/preview/5.0.0-preview.4.md)
 * Update PresentationBase to version 3.0.0
