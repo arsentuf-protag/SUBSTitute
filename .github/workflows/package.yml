@@ -31,7 +31,7 @@ jobs:
       run: cmake -B build -G "Ninja Multi-Config"
 
     - name: Build & Package
-      run: cmake --build build --config Release --target Package
+      run: cmake --build build --config Release --target package
       
     - name: Release
       uses: softprops/action-gh-release@v1
