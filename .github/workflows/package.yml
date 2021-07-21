@@ -7,7 +7,7 @@ on:
       - 'v*.*.*'
 
 jobs:
-  Package & Release:
+  release:
 
     runs-on: windows-latest
 
