@@ -12,13 +12,13 @@
     <RootNamespace>Sungaila.SUBSTitute</RootNamespace>
     <StartupObject>Sungaila.SUBSTitute.App</StartupObject>
     <ApplicationIcon>SUBSTitute.ico</ApplicationIcon>
-    <Version>1.2.0</Version>
-    <Authors>David Sungaila</Authors>
-    <Copyright>Copyright © 2020 SUBSTitute</Copyright>
+    <Version>1.1.4</Version>
+    <Authors>David Sungaila, Arsen Tufankjian</Authors>
+    <Copyright>Copyright © 2021 SUBSTitute</Copyright>
     <Company />
     <ApplicationManifest>App.manifest</ApplicationManifest>
-    <PackageProjectUrl>https://github.com/sungaila/SUBSTitute</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/sungaila/SUBSTitute.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/arsentuf-protag/SUBSTitute</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/arsentuf-protag/SUBSTitute.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>SUBSTitute.pfx</AssemblyOriginatorKeyFile>
