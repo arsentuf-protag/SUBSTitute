@@ -21,8 +21,7 @@ add_custom_command(OUTPUT ${build_product}
 
 add_custom_target(SUBSTitute ALL DEPENDS ${build_product})
 
-file(GLOB files ${publish_path}/*.*)
-install(FILES ${files} DESTINATION .)
+install(DIRECTORY ${publish_path}/ DESTINATION .)
 
 find_package(WIX REQUIRED)
 
