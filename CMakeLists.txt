@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
+set(CMAKE_SIZEOF_VOID_P 8) # 64-bit baybeeeeeeeee
 project(SUBSTitute
         VERSION 1.1.4
         DESCRIPTION "A GUI wrapper around the drive mapping tool subst"
