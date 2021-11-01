@@ -114,6 +114,6 @@ namespace Sungaila.SUBSTitute.Views
             };
 
             aboutDialog.ShowDialog();
-        }
+        }      
     }
 }
