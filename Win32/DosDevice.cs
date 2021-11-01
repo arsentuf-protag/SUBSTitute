@@ -54,10 +54,14 @@ namespace Sungaila.SUBSTitute.Win32
             DDD_NO_BROADCAST_SYSTEM = 1 << 3
         }
 
-        private static void SaveMappingToRegistry(char driveLetter, string path)
+        private static void SaveMappingToRegistry(char driveLetter, string path, string labelName)
         {
             var subkey = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
             subkey.SetValue($"{driveLetter} Drive", $"subst {driveLetter}: {path}");
+
+            var namekey = Registry.CurrentUser.CreateSubKey(@$"SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2\{driveLetter}");
+            namekey.SetValue("_LabelFromReg", labelName);
+            namekey.SetValue("_LabelFromDesktopINI", String.Empty);
         }
 
         private static void RemoveMappingFromRegistry(char driveLetter)
@@ -67,6 +71,9 @@ namespace Sungaila.SUBSTitute.Win32
             {
                 subkey.DeleteValue($"{driveLetter} Drive", false); 
             }
+
+            var namekey = Registry.CurrentUser.CreateSubKey(@$"SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2");
+            namekey.DeleteSubKeyTree($"{driveLetter}");
         }
 
         /// <summary>
@@ -74,7 +81,7 @@ namespace Sungaila.SUBSTitute.Win32
         /// </summary>
         /// <param name="driveLetter">A drive letter (from A to Z).</param>
         /// <param name="path">The directory path to map.</param>
-        public static void MapDrive(char driveLetter, string path)
+        public static void MapDrive(char driveLetter, string path, string labelName)
         {
             driveLetter = char.ToUpperInvariant(driveLetter);
 
@@ -90,7 +97,7 @@ namespace Sungaila.SUBSTitute.Win32
             if (!DefineDosDevice((int)DefineDosDeviceFlags.DDD_RAW_TARGET_PATH, $"{driveLetter}:", "\\??\\" + new DirectoryInfo(path).FullName))
                 throw new Win32Exception(Marshal.GetLastWin32Error());
 
-            SaveMappingToRegistry(driveLetter, path);
+            SaveMappingToRegistry(driveLetter, path, labelName);
         }
 
         /// <summary>

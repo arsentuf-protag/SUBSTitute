@@ -3,6 +3,7 @@ using Sungaila.SUBSTitute.Core;
 using Sungaila.SUBSTitute.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 
@@ -13,14 +14,14 @@ namespace Sungaila.SUBSTitute.Commands
     {
         public override void Execute(MainWindowViewModel parameter)
         {
-            if (parameter.SelectedMapping == null || parameter.SelectedMapping.Directory == null)
+            if (parameter.SelectedMapping == null || parameter.SelectedMapping.Directory == null || parameter.SelectedMapping.LabelName == null)
                 return;
 
             char driveLetter = parameter.SelectedMapping.DriveLetter;
 
             try
             {
-                Win32.DosDevice.MapDrive(driveLetter, parameter.SelectedMapping.Directory);
+                Win32.DosDevice.MapDrive(driveLetter, parameter.SelectedMapping.Directory, parameter.SelectedMapping.LabelName);               
                 parameter.UpdateAvailableMappings(driveLetter);
             }
             catch (Exception ex)

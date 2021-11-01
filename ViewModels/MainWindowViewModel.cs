@@ -68,7 +68,7 @@ namespace Sungaila.SUBSTitute.ViewModels
                 BrowserRootDirectory = dirInfo.Parent.FullName;
                 SelectedBrowserDirectory = BrowserDirectories.FirstOrDefault(dir => dir.FullName != null && dir.FullName.TrimEnd('\\') == dirInfo.FullName.TrimEnd('\\'));
             }
-        }
+        }       
 
         private string? _browserRootDirectory;
 

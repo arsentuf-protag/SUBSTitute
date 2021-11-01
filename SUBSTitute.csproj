@@ -7,23 +7,24 @@
     <LangVersion>8.0</LangVersion>
     <Nullable>enable</Nullable>
     <WarningsAsErrors>nullable;NU1605</WarningsAsErrors>
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
     <RootNamespace>Sungaila.SUBSTitute</RootNamespace>
     <StartupObject>Sungaila.SUBSTitute.App</StartupObject>
     <ApplicationIcon>SUBSTitute.ico</ApplicationIcon>
-    <Version>1.1.4</Version>
-    <Authors>David Sungaila, Arsen Tufankjian</Authors>
+    <Version>1.1.6</Version>
+    <Authors>David Sungaila, Arsen Tufankjian, Denis Manteufel</Authors>
     <Copyright>Copyright © 2021 SUBSTitute</Copyright>
     <Company />
     <ApplicationManifest>App.manifest</ApplicationManifest>
-    <PackageProjectUrl>https://github.com/arsentuf-protag/SUBSTitute</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/arsentuf-protag/SUBSTitute.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/DenisMtfl/SUBSTitute.git</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DenisMtfl/SUBSTitute.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>SUBSTitute.pfx</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
     <Platforms>AnyCPU;x64;x86</Platforms>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -39,6 +40,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
@@ -119,8 +124,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAPICodePack-Core" Version="1.1.0.2" />
     <PackageReference Include="Microsoft.WindowsAPICodePack-Shell" Version="1.1.0" />
-    <PackageReference Include="PresentationBase" Version="3.4.0-preview" />
-    <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
+    <PackageReference Include="PresentationBase" Version="3.4.0" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
   </ItemGroup>
 
 </Project>

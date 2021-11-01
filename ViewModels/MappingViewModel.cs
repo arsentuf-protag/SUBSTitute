@@ -56,6 +56,14 @@ namespace Sungaila.SUBSTitute.ViewModels
             }
         }
 
+        private string? _labelName;
+
+        public string? LabelName
+        {
+            get => _labelName;
+            set => SetProperty(ref _labelName, value);
+        }
+
         public bool IsDirectoryMapped
         {
             get => InitialDirectory != null;
