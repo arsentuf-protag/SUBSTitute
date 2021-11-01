@@ -2,6 +2,9 @@ name: Build & Package MSI
 
 on:
   workflow_dispatch:
+    inputs:
+      tags:     
+      
   # Whenever a release is created with tag v.*.*.*
   push:    
     tags:
